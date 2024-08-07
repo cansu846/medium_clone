@@ -1,0 +1,45 @@
+{% extends 'core/base_without_navbar.html' %}
+
+ {% block content %}
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <form method="post">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="password-confirm" name="username">
+                  </div>
+                  <div class="mb-3">
+                    <label for="username-confirm" class="form-label">Username Confirm</label>
+                    <input type="text" class="form-control" id="username-confirm" name="username_confirm">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email-confirm" class="form-label">Email Address Confirm</label>
+                    <input type="email" class="form-control" id="email-confirm" aria-describedby="emailHelp" name="email_confirm">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password-confirm" class="form-label">Password Confirm</label>
+                    <input type="password" class="form-control" id="password-confirm" name="password_confirm">
+                  </div>
+                  <div class="mb-3">
+                    <label for="instagram" class="form-label">Instagram</label>
+                    <input type="text" class="form-control" id="instagram" name="instagram">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <a type="submit" class="btn btn-secondary" href="{% url 'home_view_name' %}">Cancel</a>
+                  <a type="submit" class="btn btn-info" href="{% url 'user_profile:login_view_name' %}">Login</a>
+                </form>
+   
+          </div>
+      </div>
+  </div>  
+  {% endblock content %}
